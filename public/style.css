@@ -1,0 +1,297 @@
+/*--------------------------------------------------------------
+# VARIABLES
+--------------------------------------------------------------*/
+
+:root {
+    --zwart75: #404040;
+    --zwart50: #808080;
+    --zwart25: #bfbfbf;
+    --zwart: #000000;
+    --geel: #ffc200;
+    --wit: #ffffff;
+}
+
+/*--------------------------------------------------------------
+    # FONTS
+--------------------------------------------------------------*/
+
+@font-face {
+    font-family: "T-Star Regular";
+    src: url(./fonts/TStarProRegular.ttf);
+}
+
+/*--------------------------------------------------------------
+    # GLOBALS
+--------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--zwart75);
+    font-family: 'T-Star Regular';
+    background: linear-gradient(-45deg, rgba(255, 194, 0, 0.4), rgba(128, 128, 128, 0.4), rgba(191, 191, 191, 0.4));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+}
+
+li {
+    list-style: none;
+    background-color: #ffc200;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0.4rem;
+    display: flex;
+    border-radius: 15rem;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-weight: 900;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.testgewoon{
+    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
+}
+
+.not-included {
+    background-color: transparent;
+    border: #000000 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.line {
+    width: 5rem;
+    height: 0.2rem;
+    margin: 0.3rem;
+    background-color: var(--zwart75);
+}
+
+/*--------------------------------------------------------------
+    # LOADING STATE
+--------------------------------------------------------------*/
+
+#loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Added to vertically center the image */
+    height: 100vh;
+    /* Added to fill the entire viewport height */
+}
+
+#loading-state img {
+    position: fixed;
+    z-index: 100;
+    width: 160px;
+    height: 160px;
+    animation: loading-animation 1.5s ease-in-out 0s infinite alternate;
+}
+
+/*--------------------------------------------------------------
+    # HIDE CONTENT
+--------------------------------------------------------------*/
+
+.hide-content {
+    display: none;
+}
+
+/*--------------------------------------------------------------
+    # CONTRACT AREA
+--------------------------------------------------------------*/
+
+.contract-area {
+    display: grid;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5.9px);
+    -webkit-backdrop-filter: blur(5.9px);
+    margin: 2rem;
+    padding: 1.5rem;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-rows: 10rem 1.5fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "text basic-area complete-area premium-area"
+        "contract-options contract-options contract-options contract-options";
+}
+
+/*--------------------------------------------------------------
+    # CONTRACT AREA INFO TEXT
+--------------------------------------------------------------*/
+
+.contract-area-info-text {
+    grid-area: text;
+}
+
+.contract-area-info-text h1 {
+    width: 24rem;
+    font-size: 1.5;
+}
+
+.contract-area-info-text p {
+    padding-top: 0.5rem;
+    max-width: 24rem;
+}
+
+/*--------------------------------------------------------------
+    # PRICE AREA
+--------------------------------------------------------------*/
+
+.price-area {
+    background-color: var(--geel);
+    border-radius: 1rem;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    padding: 0.2rem 1.3rem 0.2rem 1.3rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.price-area h3 {
+    font-size: 2rem;
+}
+
+.price-area p {
+    font-size: 0.6rem;
+    margin-top: 1.5rem;
+    margin-left: 0.2rem;
+}
+
+/*--------------------------------------------------------------
+    # BASIC AREA
+--------------------------------------------------------------*/
+
+.basic-area {
+    grid-area: basic-area;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.basic-area h2 {
+    font-size: 2.5rem;
+}
+
+/*--------------------------------------------------------------
+    # COMPLETE AREA
+--------------------------------------------------------------*/
+
+.complete-area {
+    grid-area: complete-area;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.complete-area h2 {
+    font-size: 2.5rem;
+}
+
+/*--------------------------------------------------------------
+    # PREMIUM AREA
+--------------------------------------------------------------*/
+
+.premium-area {
+    grid-area: premium-area;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.premium-area h2 {
+    font-size: 2.5rem;
+}
+
+/*--------------------------------------------------------------
+    # CONTRACT OPTIONS
+--------------------------------------------------------------*/
+
+.contract-options {
+    grid-area: contract-options;
+}
+
+/*--------------------------------------------------------------
+    # BASIC AREA OPTIONS
+--------------------------------------------------------------*/
+
+.basic-area-options {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-area: basic-area-options;
+}
+
+/*--------------------------------------------------------------
+    # COMPLETE AREA OPTIONS
+--------------------------------------------------------------*/
+
+.complete-area-options {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-area: complete-area-options;
+}
+
+/*--------------------------------------------------------------
+    # PREMIUM AREA OPTIONS
+--------------------------------------------------------------*/
+
+.premium-area-options {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-area: premium-area-options;
+}
+
+/*--------------------------------------------------------------
+    # ANIMATIONS
+--------------------------------------------------------------*/
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes loading-animation {
+    0% {
+        transform: rotate(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}

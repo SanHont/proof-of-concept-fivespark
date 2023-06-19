@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiveSpark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="loading-state">
+        <img src="https://www.fivespark.com/hubfs/Fivespark_Oct_2022/Images/star-yellow.svg" width="20%">
+    </div>
+
+    <div class="hide-content">
+
+        <section class="contract-area">
+            <div class="contract-area-info-text">
+                <h1>Managed Services - Digitale Werkplek</h1>
+                <p>Met de Digitale Werkplek nemen wij je werkzaamheden uit handen en zorgen ervoor dat je werknemers op
+                    ieder moment veilig en optimaal kunnen werken.</p>
+            </div>
+
+            <div class="basic-area">
+                <h2>Basic</h2>
+                <div class="line"></div>
+                <div class="price-area">
+                    <h3>€9.00</h3>
+                    <p>per gebruiker per maand</p>
+                </div>
+            </div>
+
+            <div class="complete-area">
+                <h2>Complete</h2>
+                <div class="line"></div>
+                <div class="price-area">
+                    <h3>€49.00</h3>
+                    <p>per gebruiker per maand</p>
+                </div>
+            </div>
+
+            <div class="premium-area">
+                <h2>Premium</h2>
+                <div class="line"></div>
+                <div class="price-area">
+                    <h3>€99.00</h3>
+                    <p>per gebruiker per maand</p>
+                </div>
+            </div>
+
+            <div class="contract-options">
+                <table class="table table-primary">
+                    
+                        <tr>
+                            <td scope="col">Activiteit</th>
+                            <td scope="col">Basic</th>
+                            <td scope="col">Complete</th>
+                            <td scope="col">Premium</th>
+                        </tr>
+                  
+                    <td>
+                        <% contract_basic.forEach(activity => { %>
+                            <% activityTranslations.data.forEach(activityTranslation => { %>
+                                <% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
+                                
+                                       <p class="testgewoon"><%- activityTranslation.title %></p>
+                                    
+                                <% } %>
+                            <% }) %>
+                        <% }) %>
+                                </td>
+
+                    <td>
+                        <% contract_basic.forEach(activity => { %>
+                            <% activityTranslations.data.forEach(activityTranslation => { %>
+                                <% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
+                                    
+                                        <% if (activity.charged_minutes === 0) { %>
+                                            <li>✓</li>
+                                        <% } else { %>
+                                            <li class="not-included">✘</li>
+                                        <% } %>
+                                        
+                                    
+                                <% } %>
+                            <% }) %>
+                        <% }) %>
+                    </td>
+
+                    <td>
+                        <% contract_complete.forEach(activity => { %>
+                            <% activityTranslations.data.forEach(activityTranslation => { %>
+                                <% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
+                                
+                                        
+                                        <% if (activity.charged_minutes === 0) { %>
+                                            <li>✓</li>
+                                        <% } else { %>
+                                            <li class="not-included">✘</li>
+                                        <% } %>
+                                        
+                                    
+                                <% } %>
+                            <% }) %>
+                        <% }) %>
+                    </td>
+
+                    <td>
+                        <% contract_premium.forEach(activity => { %>
+                            <% activityTranslations.data.forEach(activityTranslation => { %>
+                                <% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
+                                
+                                        
+                                        <% if (activity.charged_minutes === 0) { %>
+                                            <li>✓</li>
+                                        <% } else { %>
+                                            <li class="not-included">✘</li>
+                                        <% } %>
+                                       
+                                    
+                                <% } %>
+                            <% }) %>
+                        <% }) %>
+                    </td>
+                </table>
+            </div>
+<!-- 
+            <div class="basic-area-options">
+                <ul>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li class="not-included">✘</li>
+                    <li class="not-included">✘</li>
+                    <li class="not-included">✘</li>
+                    <li class="not-included">✘</li>
+                    <li class="not-included">✘</li>
+                    <li class="not-included">✘</li>
+                </ul>
+            </div>
+
+            <div class="complete-area-options">
+                <ul>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li class="not-included">✘</li>
+                    <li class="not-included">✘</li>
+                    <li class="not-included">✘</li>
+                </ul>
+            </div>
+
+            <div class="premium-area-options">
+                <ul>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                    <li>✓</li>
+                </ul>
+            </div> -->
+
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

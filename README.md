@@ -16,6 +16,7 @@
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
+![MacFiveSpark](https://github.com/SanHont/proof-of-concept-fivespark/assets/112860052/d1c7c447-4e83-4670-bf72-5138d04ad3ee)
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->

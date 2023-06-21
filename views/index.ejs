@@ -53,81 +53,82 @@
 
             <div class="contract-options">
                 <table class="table table-primary">
-                    
-                        <tr>
-                            <td scope="col">Activiteit</th>
-                            <td scope="col">Basic</th>
-                            <td scope="col">Complete</th>
-                            <td scope="col">Premium</th>
-                        </tr>
-                  
-                    <td>
-                        <% contract_basic.forEach(activity => { %>
-                            <% activityTranslations.data.forEach(activityTranslation => { %>
-                                <% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
-                                
-                                       <p class="testgewoon"><%- activityTranslation.title %></p>
-                                    
-                                <% } %>
-                            <% }) %>
-                        <% }) %>
-                                </td>
+
+                    <tr>
+                        <td scope="col">Activiteit</th>
+                    </tr>
 
                     <td>
-                        <% contract_basic.forEach(activity => { %>
-                            <% activityTranslations.data.forEach(activityTranslation => { %>
-                                <% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
-                                    
-                                        <% if (activity.charged_minutes === 0) { %>
-                                            <li>✓</li>
-                                        <% } else { %>
-                                            <li class="not-included">✘</li>
-                                        <% } %>
-                                        
-                                    
-                                <% } %>
-                            <% }) %>
-                        <% }) %>
+                        <% contract_basic.forEach(activity=> { %>
+                            <% activityTranslations.data.forEach(activityTranslation=> { %>
+                                <% if (activity.activities_id===activityTranslation.activities_id &&
+                                    activityTranslation.languages_code===language) { %>
+
+                                    <p class="activities"><%- activityTranslation.title %></p>
+
+                                    <% } %>
+                                        <% }) %>
+                                            <% }) %>
                     </td>
 
                     <td>
-                        <% contract_complete.forEach(activity => { %>
-                            <% activityTranslations.data.forEach(activityTranslation => { %>
-                                <% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
-                                
-                                        
-                                        <% if (activity.charged_minutes === 0) { %>
-                                            <li>✓</li>
+                        <% contract_basic.forEach(activity=> { %>
+                            <% activityTranslations.data.forEach(activityTranslation=> { %>
+                                <% if (activity.activities_id===activityTranslation.activities_id &&
+                                    activityTranslation.languages_code===language) { %>
+
+                                    <% if (activity.charged_minutes===0) { %>
+                                        <li>✓</li>
                                         <% } else { %>
                                             <li class="not-included">✘</li>
-                                        <% } %>
-                                        
-                                    
-                                <% } %>
-                            <% }) %>
-                        <% }) %>
+                                            <% } %>
+
+
+                                                <% } %>
+                                                    <% }) %>
+                                                        <% }) %>
                     </td>
 
                     <td>
-                        <% contract_premium.forEach(activity => { %>
-                            <% activityTranslations.data.forEach(activityTranslation => { %>
-                                <% if (activity.activities_id === activityTranslation.activities_id && activityTranslation.languages_code === language) { %>
-                                
-                                        
-                                        <% if (activity.charged_minutes === 0) { %>
-                                            <li>✓</li>
+                        <% contract_complete.forEach(activity=> { %>
+                            <% activityTranslations.data.forEach(activityTranslation=> { %>
+                                <% if (activity.activities_id===activityTranslation.activities_id &&
+                                    activityTranslation.languages_code===language) { %>
+
+
+                                    <% if (activity.charged_minutes===0) { %>
+                                        <li>✓</li>
                                         <% } else { %>
                                             <li class="not-included">✘</li>
-                                        <% } %>
-                                       
-                                    
-                                <% } %>
-                            <% }) %>
-                        <% }) %>
+                                            <% } %>
+
+
+                                                <% } %>
+                                                    <% }) %>
+                                                        <% }) %>
+                    </td>
+
+                    <td>
+                        <% contract_premium.forEach(activity=> { %>
+                            <% activityTranslations.data.forEach(activityTranslation=> { %>
+                                <% if (activity.activities_id===activityTranslation.activities_id &&
+                                    activityTranslation.languages_code===language) { %>
+
+
+                                    <% if (activity.charged_minutes===0) { %>
+                                        <li>✓</li>
+                                        <% } else { %>
+                                            <li class="not-included">✘</li>
+                                            <% } %>
+
+
+                                                <% } %>
+                                                    <% }) %>
+                                                        <% }) %>
                     </td>
                 </table>
             </div>
-<!-- 
+            <!-- 
             <div class="basic-area-options">
                 <ul>
                     <li>✓</li>

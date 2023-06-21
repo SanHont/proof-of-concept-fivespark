@@ -59,13 +59,10 @@ li {
     align-items: center;
     color: #FFF;
     font-weight: 900;
-    margin-left: 2rem;
-    margin-right: 2rem;
-}
-
-.testgewoon{
-    margin-bottom: 0.4rem;
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    margin-left: 9rem;
+    margin-right: 9rem;
 }
 
 .not-included {
@@ -75,6 +72,12 @@ li {
     justify-content: center;
     align-items: center;
     color: #000;
+}
+
+.activities {
+    margin-bottom: 0.4rem;
+    max-width: 30rem;
+    margin-top: 0.4rem;
 }
 
 .line {
